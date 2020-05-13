@@ -1,0 +1,975 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35CF1197-BF57-4576-9F14-9B3B99130428}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IOAS.DataModel</RootNamespace>
+    <AssemblyName>IOAS.DataModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="IOASDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOASDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IOASDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IOASDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IOASDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tblAccountGroup.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAccountHead.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAccountType.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAdhocPayCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAdhocPayCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAdhocPayDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAdhocPayDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAdhocPayExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAdhocPayInvoiceDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAdhocPayment.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAgencyDocument.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAgencyMaster.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBankAccountMapping.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBankAccountMaster.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBankProjectGroup.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBillCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBillCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBillDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBillDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBillEntry.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBillExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBillPaymentTransactionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBillPODetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBillTDSDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBOA.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBOADetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBOADraft.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBOADraftDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBOAPaymentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBOASubTransaction.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBOASummary.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBOATransaction.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBudgetHead.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCardDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblClearanceAgentMaster.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblClearanceAgentTDSDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblClearancePaymentCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblClearancePaymentCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblClearancePaymentDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblClearancePaymentDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblClearancePaymentEntry.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblClearancePaymentExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblClearancePaymentPODetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblClearancePaymentTDSDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblClearancePaymentTransactionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCodeControl.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCommitment.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCommitmentClosedLog.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCommitmentDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCommitmentLog.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblConsultancyFundingCategory.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContra.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContraDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCountries.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCreditNote.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCurrency.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDDFMapping.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDeductionHead.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDepartment.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDistributeInstituteOHBreakup.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDistribution.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDistributionCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDistributionCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDistributionDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDistributionDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDistributionDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDistributionExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDistributionPCFDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDocument.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDynamicReports.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEmpITDeclaration.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEmpITDeclarationDoc.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEmployeePCFAccountDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEmpOtherAllowance.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEmpOtherIncome.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEmpSOPIncome.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblEvent.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFinYear.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblForeignRemitCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblForeignRemitCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblForeignRemitDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblForeignRemitDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblForeignRemitExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblForeignRemittance.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFunction.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFunctionCheckList.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFunctionDocument.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblFunctionStatus.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblGroupMapping.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblGstDocument.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHeadOBDeletedLog.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHeadOpeningBalance.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHonororium.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHonororiumCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHonororiumCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHonororiumDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHonororiumDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHonororiumDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHonororiumExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHonororiumPCFDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblIITMBankMaster.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblImpRecoupCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblImprestBillRecoupDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblImprestBillRecoupment.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblImprestCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblImprestDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblImprestDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblImprestExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblImprestPaymentDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblImprestRecoupBillBreakup.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblImprestRecoupCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblImprestRecoupDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblImprestRecoupExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblImprestRecoupment.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblIMPUserDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblIMPUserEntryCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInstallment.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInstituteMaster.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInvoiceTaxDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblITDeclaration.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJointDevelopmentCompany.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJournal.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJournalDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJournalTransationDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblLoginDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMenuGroup.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMinistryMaster.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblModules.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNegativeBalance.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblNotification.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOfficeOrder.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOfficeOrderDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOtherInstituteCoPI.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOtherPayment.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOverheadsPercentage.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOverheadsPosting.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOverheadsPostingContraDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOverheadsPostingCorpusDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOverheadsPostingDDFDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOverheadsPostingDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOverheadsPostingDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOverheadsPostingExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOverheadsPostingICSROHDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOverheadsPostingPCFDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOverheadsPostingRMFDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOverheadsPostingSWFDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPartTimePayment.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPartTimePaymentCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPartTimePaymentCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPartTimePaymentDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPartTimePaymentDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPartTimePaymentExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPartTimeStudentDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPayment.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPaymentPayee.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPaymentTransaction.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPCFRMFShareLog.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProcessGuidelineDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProcessGuidelineDocument.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProcessGuidelineHeader.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProcessGuidelineUser.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProcessGuidelineWorkFlow.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProcessGuidelineWorkflowDocument.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProcessTransaction.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProcessTransactionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProcessTransactionDocuments.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProformaInvoice.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProformaInvoiceDraft.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProformaInvoiceTaxDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProject.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjectAllocation.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjectCoPI.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjectEnhancement.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjectEnhancementAllocation.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjectFundingBody.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjectInvoice.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjectInvoiceDraft.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjectOtherInstituteCoPI.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjectStaffCategoryMaster.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjectStaffCategorywiseBreakup.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjectStatusLog.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjectTransfer.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProjectTransferDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProposal.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProposalCoPI.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblProposalSupportDocuments.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblReceipt.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblReceiptAgencyShareDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblReceiptAllocation.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblReceiptOverheadBreakup.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblReceiptRecivables.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblReceiptTransactionDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblReverseTaxDocument.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblRole.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblRoleaccess.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSalaryHead.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSalaryPayment.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSalaryPaymentHead.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSBICardCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSBICardEntryExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSBICardRecoupCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSBICardRecoupExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSBICardRecoupment.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSBIEcardDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSBIECardDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSBIECardDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSBIECardEntryCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSBIECardPrjctCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSBIEcardRecoupBillBreakup.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSBIEcardRecoupDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSBIPrepaidCardProjectDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSchemes.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSponsoredSchemes.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSRB.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSRBDeactivation.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSRBDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSRBItemCategory.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblStaffAppointmentExtension.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblStaffAppointmentMaster.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblStateMaster.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSummerInternshipCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSummerInternshipDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSummerInternshipExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSummerInternshipStudentDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSummrInternCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSummrInternDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSupportDocuments.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTapal.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTapalDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTapalWorkflow.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTaxDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTaxMaster.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTDSDocument.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTDSMaster.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTempAdvanceBreakUpDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTempAdvanceSettlement.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTempAdvCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTempAdvCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTempAdvDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTempAdvExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTempAdvSettlCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTempAdvSettlCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTempAdvSettlDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTempAdvSettlementBillBreakup.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTempAdvSettlExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTemporaryAdvance.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTemporaryAdvanceDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTemporaryAdvanceSettlementBill.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTransactionDefinition.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTransactionTypeCode.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTravelBill.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTravelBillBreakUpDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTravelBillCheckDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTravelBillCommitmentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTravelBillDeductionDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTravelBillDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTravelBillDocumentDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTravelBillExpenseDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTravelBillTravellerDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTravelDailyAllowance.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTravelInvoiceDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTravelPaymentBreakUpDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUpdateLedgerOBLog.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUser.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUserRole.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblVendorMaster.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblVendorTDSDetail.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblVoucherDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblVoucherHead.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwAccountGroupinHeadwise.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VWAppointInfo.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwCombineStaffDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwCommitmentSpentBalance.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwFacultyStaffDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VWOfficeTransactions.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VWOngoing.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwPI.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwProjectDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwProjectTransferBalance.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwProposalDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwSRBDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwStudentDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwTapalDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_BOATransactionDetails.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_CommitmentReport.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_DemoLedgers.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_Postings.cs">
+      <DependentUpon>IOASDataModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="IOASDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>IOASDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IOASDataModel.edmx.diagram">
+      <DependentUpon>IOASDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IOASDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IOASDataModel.edmx</DependentUpon>
+      <LastGenOutput>IOASDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="IOASDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>IOASDataModel.edmx</DependentUpon>
+      <LastGenOutput>IOASDataModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
